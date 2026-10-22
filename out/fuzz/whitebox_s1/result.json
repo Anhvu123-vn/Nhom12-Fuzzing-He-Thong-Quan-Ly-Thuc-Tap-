@@ -1,0 +1,128 @@
+{
+ "mode": "whitebox",
+ "runs": 3000,
+ "seed": 1,
+ "time_s": 62.5,
+ "blocks": 74,
+ "distinct_states": 24,
+ "corpus_seeds": 8,
+ "hangs": 0,
+ "findings": {
+  "UBSan:signed integer overflow@line170": {
+   "first_run": 7,
+   "rc": 0,
+   "payload_hex": "00000000000000000000000000000020bac48a6a06535630303100"
+  },
+  "ASan:stack-buffer-overflow@parse_student_id": {
+   "first_run": 24,
+   "rc": 1,
+   "payload_hex": "00000000ff93357740000000000000000000000016645e643e287c252a313535643b424a6c60404f4b4b00"
+  },
+  "ASan:heap-use-after-free@release_session_buffer": {
+   "first_run": 46,
+   "rc": 1,
+   "payload_hex": "adde00000000000000000100828d37b8000000000653563030320068656c6c6f"
+  },
+  "ASan:stack-buffer-overflow@check_status_magic": {
+   "first_run": 97,
+   "rc": 1,
+   "payload_hex": "544e49000000000000000000ff937577d2e0645f065356303032004e734d21817196238cc5faf92940a202fe6cbca990095e6b6648efa8e5c0ab04e617ec17d8"
+  },
+  "ASan:heap-use-after-free@telemetry_byte_counter": {
+   "first_run": 110,
+   "rc": 1,
+   "payload_hex": "544e49000000000000000000ff93757731626338065356303032004242"
+  },
+  "ASan:heap-use-after-free@close_session": {
+   "first_run": 208,
+   "rc": 1,
+   "payload_hex": "544e49000000000000000000d9535cfe31626338065356303032004242"
+  },
+  "ASan:SEGV@device_unlock_code": {
+   "first_run": 1975,
+   "rc": 1,
+   "payload_hex": "adde0000fd1c00003e0d000011000000000000000653563030320068656c6c6f"
+  }
+ },
+ "curve": [
+  {
+   "run": 1,
+   "blocks": 50,
+   "findings": 0,
+   "seeds": 1
+  },
+  {
+   "run": 250,
+   "blocks": 72,
+   "findings": 6,
+   "seeds": 6
+  },
+  {
+   "run": 500,
+   "blocks": 72,
+   "findings": 6,
+   "seeds": 6
+  },
+  {
+   "run": 750,
+   "blocks": 73,
+   "findings": 6,
+   "seeds": 7
+  },
+  {
+   "run": 1000,
+   "blocks": 73,
+   "findings": 6,
+   "seeds": 7
+  },
+  {
+   "run": 1250,
+   "blocks": 73,
+   "findings": 6,
+   "seeds": 7
+  },
+  {
+   "run": 1500,
+   "blocks": 73,
+   "findings": 6,
+   "seeds": 7
+  },
+  {
+   "run": 1750,
+   "blocks": 73,
+   "findings": 6,
+   "seeds": 7
+  },
+  {
+   "run": 2000,
+   "blocks": 74,
+   "findings": 7,
+   "seeds": 8
+  },
+  {
+   "run": 2250,
+   "blocks": 74,
+   "findings": 7,
+   "seeds": 8
+  },
+  {
+   "run": 2500,
+   "blocks": 74,
+   "findings": 7,
+   "seeds": 8
+  },
+  {
+   "run": 2750,
+   "blocks": 74,
+   "findings": 7,
+   "seeds": 8
+  },
+  {
+   "run": 3000,
+   "blocks": 74,
+   "findings": 7,
+   "seeds": 8
+  }
+ ],
+ "dict_size": 35
+}

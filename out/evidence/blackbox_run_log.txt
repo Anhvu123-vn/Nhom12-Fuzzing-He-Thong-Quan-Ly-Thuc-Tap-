@@ -1,0 +1,10 @@
+=== Black-box Fuzzing – internship_parser (chạy thật) ===
+Target: /tmp/internship_parser
+Time: 2026-10-19 02:01:03
+
+Buffer-overflow (long ID): tries=1, time=0.350s, found=True
+Magic status: tries=200000, time=0.161s, found=False
+  -> Khong tim thay trong ngan sach; ky vong ~2^32 lan thu
+Unlock pair: tries=500000, time=0.642s, found=False
+  -> Xac suat 1/2^64, black-box thuc te bat kha thi
+  Toc do uoc tinh: ~778927 lan thu/giay (chi dem vong random)

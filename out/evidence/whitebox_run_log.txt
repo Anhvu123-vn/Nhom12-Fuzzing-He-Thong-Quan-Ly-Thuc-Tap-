@@ -1,0 +1,28 @@
+=== White-box Fuzzing – internship_parser (chạy thật) ===
+Target ASan: /tmp/internship_parser_asan
+Time: 2026-10-19 02:01:31
+Phuong phap: giai nguoc truc tiep dieu kien equality (tuong duong Z3 cho rang buoc don gian)
+
+Magic status: value=0x00494E54, solve_time_ms=0.000, crashed=True, asan=stack-buffer-overflow
+  ASan excerpt:
+==549==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7f11a9b00090 at pc 0x7f11ac6b8923 bp 0x7fff06f101e0 sp 0x7fff06f0f988
+    #1 0x55cae1d8151f in parse_student_id /home/workdir/artifacts/fuzzing_internship/targets/internship_parser.c:72
+SUMMARY: AddressSanitizer: stack-buffer-overflow ../../../../src/libsanitizer/asan/asan_interceptors.cpp:563 in strcpy
+Unlock pair: a=7421, b=3390, solve_time_ms=0.000, crashed=True, asan=SEGV
+  ASan excerpt:
+internship_parser.c:158:12: runtime error: store to null pointer of type 'char'
+==563==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5651d029bd30 bp 0x7fff18e02590 sp 0x7fff18e02570 T0)
+    #0 0x5651d029bd30 in device_unlock_code /home/workdir/artifacts/fuzzing_internship/targets/internship_parser.c:158
+SUMMARY: AddressSanitizer: SEGV /home/workdir/artifacts/fuzzing_internship/targets/internship_parser.c:158 in device_unlock_code
+Long ID overflow: id_len=64, crashed=True, asan=stack-buffer-overflow
+Telemetry overflow: sent=1500000000, queued=1000000000, rc=0, asan=ERROR:
+
+=== Bang so sanh Black-box vs White-box ===
+| Ky thuat              | So lan thu      | Thoi gian      | Tim thay nhanh muc tieu? |
+|-----------------------|-----------------|----------------|--------------------------|
+| Black-box (long ID)   | 1               | 0.35 s         | Co (CWE-120)             |
+| Black-box (magic)     | 200.000         | 0.16 s         | Khong                    |
+| Black-box (unlock)    | 500.000         | 0.64 s         | Khong                    |
+| White-box (magic)     | 1 lan giai       | < 0.01 ms      | Co                       |
+| White-box (unlock)    | 1 lan giai       | < 0.01 ms      | Co (NULL-deref)          |
+| White-box (long ID)   | 1 (sinh truc tiep)| < 0.01 ms    | Co (CWE-120)             |

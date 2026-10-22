@@ -1,0 +1,23 @@
+../fuzzing_internship/targets/internship_parser.c:158:12: runtime error: store to null pointer of type 'char'
+    #0 0x5619c8975cf7 in device_unlock_code ../fuzzing_internship/targets/internship_parser.c:158
+    #1 0x5619c8976821 in process_application_payload ../fuzzing_internship/targets/internship_parser.c:238
+    #2 0x5619c8976f20 in main ../fuzzing_internship/targets/internship_parser.c:307
+    #3 0x7f0ed122a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7f0ed122a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x5619c8975404 in _start (/home/claude/w/fuzzing_internship/build/parser_asan+0x3404) (BuildId: 5944f1cce05cdf4314454e51ca1443ca957a2d59)
+
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==118==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5619c8975d30 bp 0x7ffe41a92f20 sp 0x7ffe41a92f00 T0)
+==118==The signal is caused by a WRITE memory access.
+==118==Hint: address points to the zero page.
+    #0 0x5619c8975d30 in device_unlock_code ../fuzzing_internship/targets/internship_parser.c:158
+    #1 0x5619c8976821 in process_application_payload ../fuzzing_internship/targets/internship_parser.c:238
+    #2 0x5619c8976f20 in main ../fuzzing_internship/targets/internship_parser.c:307
+    #3 0x7f0ed122a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7f0ed122a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x5619c8975404 in _start (/home/claude/w/fuzzing_internship/build/parser_asan+0x3404) (BuildId: 5944f1cce05cdf4314454e51ca1443ca957a2d59)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../fuzzing_internship/targets/internship_parser.c:158 in device_unlock_code
+==118==ABORTING

@@ -1,0 +1,79 @@
+{
+ "baseline_benign_seed": {
+  "line_pct": 68.18,
+  "lines": 110,
+  "branch_pct": 70.37,
+  "branches": 54,
+  "taken_pct": 35.19
+ },
+ "blackbox_s1": {
+  "line_pct": 70.91,
+  "lines": 110,
+  "branch_pct": 74.07,
+  "branches": 54,
+  "taken_pct": 44.44
+ },
+ "blackbox_s2": {
+  "line_pct": 70.91,
+  "lines": 110,
+  "branch_pct": 74.07,
+  "branches": 54,
+  "taken_pct": 44.44
+ },
+ "blackbox_s3": {
+  "line_pct": 70.91,
+  "lines": 110,
+  "branch_pct": 74.07,
+  "branches": 54,
+  "taken_pct": 42.59
+ },
+ "bounded_s1": {
+  "line_pct": 70.91,
+  "lines": 110,
+  "branch_pct": 74.07,
+  "branches": 54,
+  "taken_pct": 44.44
+ },
+ "bounded_s2": {
+  "line_pct": 70.91,
+  "lines": 110,
+  "branch_pct": 74.07,
+  "branches": 54,
+  "taken_pct": 44.44
+ },
+ "bounded_s3": {
+  "line_pct": 70.91,
+  "lines": 110,
+  "branch_pct": 74.07,
+  "branches": 54,
+  "taken_pct": 44.44
+ },
+ "whitebox_s1": {
+  "line_pct": 91.82,
+  "lines": 110,
+  "branch_pct": 100.0,
+  "branches": 54,
+  "taken_pct": 66.67
+ },
+ "whitebox_s2": {
+  "line_pct": 89.09,
+  "lines": 110,
+  "branch_pct": 100.0,
+  "branches": 54,
+  "taken_pct": 64.81
+ },
+ "whitebox_s3": {
+  "line_pct": 89.09,
+  "lines": 110,
+  "branch_pct": 100.0,
+  "branches": 54,
+  "taken_pct": 68.52
+ },
+ "evidence_payloads": {
+  "line_pct": 89.09,
+  "lines": 110,
+  "branch_pct": 96.3,
+  "branches": 54,
+  "taken_pct": 61.11
+ }
+}

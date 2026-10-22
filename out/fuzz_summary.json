@@ -1,0 +1,111 @@
+{
+ "blackbox_s1": {
+  "blocks": 56,
+  "states": 11,
+  "seeds": 4,
+  "hangs": 0,
+  "time_s": 169.2,
+  "findings_fixed": {
+   "UBSan:signed integer overflow@line170": 2,
+   "ASan:stack-buffer-overflow@parse_student_id": 3
+  }
+ },
+ "blackbox_s2": {
+  "blocks": 56,
+  "states": 9,
+  "seeds": 4,
+  "hangs": 0,
+  "time_s": 156.0,
+  "findings_fixed": {
+   "ASan:stack-buffer-overflow@parse_student_id": 2,
+   "UBSan:signed integer overflow@line170": 7
+  }
+ },
+ "blackbox_s3": {
+  "blocks": 56,
+  "states": 9,
+  "seeds": 4,
+  "hangs": 0,
+  "time_s": 157.1,
+  "findings_fixed": {
+   "ASan:stack-buffer-overflow@parse_student_id": 1,
+   "UBSan:signed integer overflow@line170": 27
+  }
+ },
+ "bounded_s1": {
+  "blocks": 56,
+  "states": 7,
+  "seeds": 3,
+  "hangs": 0,
+  "time_s": 130.6,
+  "findings_fixed": {
+   "UBSan:signed integer overflow@line170": 1,
+   "ASan:stack-buffer-overflow@parse_student_id": 5
+  }
+ },
+ "bounded_s2": {
+  "blocks": 56,
+  "states": 7,
+  "seeds": 4,
+  "hangs": 0,
+  "time_s": 124.2,
+  "findings_fixed": {
+   "ASan:stack-buffer-overflow@parse_student_id": 2,
+   "UBSan:signed integer overflow@line170": 3
+  }
+ },
+ "bounded_s3": {
+  "blocks": 56,
+  "states": 7,
+  "seeds": 3,
+  "hangs": 0,
+  "time_s": 128.6,
+  "findings_fixed": {
+   "UBSan:signed integer overflow@line170": 1,
+   "ASan:stack-buffer-overflow@parse_student_id": 2
+  }
+ },
+ "whitebox_s1": {
+  "blocks": 74,
+  "states": 24,
+  "seeds": 8,
+  "hangs": 0,
+  "time_s": 62.5,
+  "findings_fixed": {
+   "UBSan:signed integer overflow@line170": 7,
+   "ASan:stack-buffer-overflow@parse_student_id": 24,
+   "ASan:heap-use-after-free@release_session_buffer": 46,
+   "ASan:stack-buffer-overflow@check_status_magic": 97,
+   "ASan:heap-use-after-free@close_session": 110,
+   "ASan:SEGV@device_unlock_code": 1975
+  }
+ },
+ "whitebox_s2": {
+  "blocks": 73,
+  "states": 20,
+  "seeds": 7,
+  "hangs": 0,
+  "time_s": 49.1,
+  "findings_fixed": {
+   "ASan:stack-buffer-overflow@parse_student_id": 54,
+   "ASan:stack-buffer-overflow@check_status_magic": 189,
+   "UBSan:signed integer overflow@line170": 225,
+   "ASan:heap-use-after-free@close_session": 237,
+   "ASan:heap-use-after-free@release_session_buffer": 265
+  }
+ },
+ "whitebox_s3": {
+  "blocks": 73,
+  "states": 22,
+  "seeds": 7,
+  "hangs": 0,
+  "time_s": 55.5,
+  "findings_fixed": {
+   "ASan:stack-buffer-overflow@parse_student_id": 18,
+   "ASan:heap-use-after-free@release_session_buffer": 70,
+   "ASan:heap-use-after-free@close_session": 93,
+   "ASan:stack-buffer-overflow@check_status_magic": 96,
+   "UBSan:signed integer overflow@line170": 130
+  }
+ }
+}

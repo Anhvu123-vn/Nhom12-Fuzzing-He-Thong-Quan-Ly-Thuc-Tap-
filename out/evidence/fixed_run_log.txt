@@ -1,0 +1,5 @@
+=== Fixed binary – no crash expected ===
+long_id: rc=0, safe=True
+magic: rc=0, safe=True
+unlock: rc=0, safe=True
+telemetry: rc=0, safe=True

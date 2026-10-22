@@ -1,0 +1,103 @@
+{
+ "mode": "bounded",
+ "runs": 3000,
+ "seed": 3,
+ "time_s": 128.6,
+ "blocks": 56,
+ "distinct_states": 7,
+ "corpus_seeds": 3,
+ "hangs": 0,
+ "findings": {
+  "UBSan:signed integer overflow@line170": {
+   "first_run": 1,
+   "rc": 0,
+   "payload_hex": "24163100181e00009f220000b048f279829caa65106b65304f6d5c706a286d215c41663d00333d713362517e217528346b254623425c6c7c517b56527d6958314e2c24315f3b41765770465560"
+  },
+  "ASan:stack-buffer-overflow@parse_student_id": {
+   "first_run": 2,
+   "rc": 1,
+   "payload_hex": "ad5f44003c120000f6070000c2f33e10e271647b19694c646a546a3d4b7723436d75793479496569682d7b733b005d2b4c285433224556552f256d6e25507b6b4a6643603e244720292d6c64243954456e413378254b"
+  }
+ },
+ "curve": [
+  {
+   "run": 1,
+   "blocks": 51,
+   "findings": 1,
+   "seeds": 1
+  },
+  {
+   "run": 250,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 500,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 750,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 1000,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 1250,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 1500,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 1750,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 2000,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 2250,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 2500,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 2750,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  },
+  {
+   "run": 3000,
+   "blocks": 56,
+   "findings": 2,
+   "seeds": 3
+  }
+ ],
+ "dict_size": 0
+}

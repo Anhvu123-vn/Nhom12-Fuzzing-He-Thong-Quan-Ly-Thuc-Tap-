@@ -1,0 +1,12 @@
+BUG-01_overflow_student_id           buggy rc=1   SUMMARY: AddressSanitizer: stack-buffer-overflow ../../../../src/libsanitizer/asan/asan_interceptors.cpp:563 in strcpy
+BUG-01_overflow_student_id           fixed rc=0   
+BUG-02_overflow_magic_status         buggy rc=1   SUMMARY: AddressSanitizer: stack-buffer-overflow ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115 in 
+BUG-02_overflow_magic_status         fixed rc=0   
+BUG-03_null_deref_unlock             buggy rc=1   ../fuzzing_internship/targets/internship_parser.c:158:12: runtime error: store to null pointer of type 'char'|SUMMARY: AddressSanitizer: SEGV ../fuzzi
+BUG-03_null_deref_unlock             fixed rc=0   
+BUG-05_double_free_close_session     buggy rc=1   SUMMARY: AddressSanitizer: heap-use-after-free ../fuzzing_internship/targets/internship_parser.c:109 in close_session
+BUG-05_double_free_close_session     fixed rc=0   
+BUG-06_uaf_release_buffer            buggy rc=1   SUMMARY: AddressSanitizer: heap-use-after-free ../fuzzing_internship/targets/internship_parser.c:126 in release_session_buffer
+BUG-06_uaf_release_buffer            fixed rc=0   
+BUG-07_int_overflow_telemetry        buggy rc=0   ../fuzzing_internship/targets/internship_parser.c:170:13: runtime error: signed integer overflow: 1500000000 + 1000000000 cannot be represented in typ
+BUG-07_int_overflow_telemetry        fixed rc=0   

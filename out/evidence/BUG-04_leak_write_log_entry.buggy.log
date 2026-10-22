@@ -1,0 +1,14 @@
+==160==WARNING: AddressSanitizer failed to allocate 0x4000000000000001 bytes
+
+=================================================================
+==160==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3bb88fd9c7 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x55876c816561 in write_log_entry scripts/../targets/internship_parser.c:86
+    #2 0x55876c817fec in main scripts/leak_harness.c:6
+    #3 0x7f3bb7c2a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7f3bb7c2a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x55876c816424 in _start (/home/claude/w/fuzzing_internship/build/leak_asan+0x4424) (BuildId: 1f4217dd43428a589933f544afc16d5f23e1fdf9)
+
+SUMMARY: AddressSanitizer: 24 byte(s) leaked in 1 allocation(s).

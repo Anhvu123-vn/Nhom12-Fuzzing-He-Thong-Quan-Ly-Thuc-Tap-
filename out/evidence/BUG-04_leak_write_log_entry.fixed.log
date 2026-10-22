@@ -1,0 +1,2 @@
+==162==WARNING: AddressSanitizer failed to allocate 0x4000000000000001 bytes
+write_log_entry returned (nil)

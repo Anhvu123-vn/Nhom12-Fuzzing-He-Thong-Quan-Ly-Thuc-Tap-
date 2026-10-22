@@ -1,0 +1,56 @@
+=================================================================
+==447==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7f0572100090 at pc 0x7f0574ca8923 bp 0x7ffce6ca7b60 sp 0x7ffce6ca7308
+WRITE of size 65 at 0x7f0572100090 thread T0
+    #0 0x7f0574ca8922 in strcpy ../../../../src/libsanitizer/asan/asan_interceptors.cpp:563
+    #1 0x5573788ae51f in parse_student_id /home/workdir/artifacts/fuzzing_internship/targets/internship_parser.c:72
+    #2 0x5573788af6b2 in process_application_payload /home/workdir/artifacts/fuzzing_internship/targets/internship_parser.c:229
+    #3 0x5573788aff20 in main /home/workdir/artifacts/fuzzing_internship/targets/internship_parser.c:307
+    #4 0x7f05744031c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #5 0x7f057440328a in __libc_start_main_impl ../csu/libc-start.c:360
+    #6 0x5573788ae404 in _start (/tmp/internship_parser_asan+0x3404) (BuildId: e319d07eee0b8f657f6ca1a90f23a1c57dc9238b)
+
+Address 0x7f0572100090 is located in stack of thread T0 at offset 144 in frame
+    #0 0x5573788af04f in process_application_payload /home/workdir/artifacts/fuzzing_internship/targets/internship_parser.c:210
+
+  This frame has 6 object(s):
+    [48, 52) 'status_code' (line 213)
+    [64, 68) 'code_a' (line 214)
+    [80, 84) 'code_b' (line 214)
+    [96, 100) 'sent' (line 214)
+    [112, 116) 'queued' (line 214)
+    [128, 144) 'student_id' (line 225) <== Memory access at offset 144 overflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow ../../../../src/libsanitizer/asan/asan_interceptors.cpp:563 in strcpy
+Shadow bytes around the buggy address:
+  0x7f05720ffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f05720ffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f05720fff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f05720fff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f0572100000: f1 f1 f1 f1 f1 f1 04 f2 04 f2 04 f2 04 f2 04 f2
+=>0x7f0572100080: 00 00[f3]f3 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f0572100100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f0572100180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f0572100200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f0572100280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f0572100300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==447==ABORTING

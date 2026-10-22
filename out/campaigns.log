@@ -1,0 +1,10 @@
+blackbox 1 blocks 56 states 11 findings ['ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 169.2
+bounded 1 blocks 56 states 7 findings ['ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 130.6
+whitebox 1 blocks 74 states 24 findings ['ASan:SEGV@device_unlock_code', 'ASan:heap-use-after-free@close_session', 'ASan:heap-use-after-free@release_session_buffer', 'ASan:heap-use-after-free@telemetry_byte_counter', 'ASan:stack-buffer-overflow@check_status_magic', 'ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 62.5
+blackbox 2 blocks 56 states 9 findings ['ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 156.0
+bounded 2 blocks 56 states 7 findings ['ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 124.2
+whitebox 2 blocks 73 states 20 findings ['ASan:heap-use-after-free@close_session', 'ASan:heap-use-after-free@release_session_buffer', 'ASan:stack-buffer-overflow@check_status_magic', 'ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 49.1
+blackbox 3 blocks 56 states 9 findings ['ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 157.1
+bounded 3 blocks 56 states 7 findings ['ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 128.6
+whitebox 3 blocks 73 states 22 findings ['ASan:heap-use-after-free@close_session', 'ASan:heap-use-after-free@release_session_buffer', 'ASan:stack-buffer-overflow@check_status_magic', 'ASan:stack-buffer-overflow@parse_student_id', 'UBSan:signed integer overflow@line170'] t 55.5
+DONE

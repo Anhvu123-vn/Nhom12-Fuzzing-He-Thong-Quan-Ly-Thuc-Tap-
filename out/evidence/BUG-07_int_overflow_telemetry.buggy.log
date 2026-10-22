@@ -1,0 +1,8 @@
+../fuzzing_internship/targets/internship_parser.c:170:13: runtime error: signed integer overflow: 1500000000 + 1000000000 cannot be represented in type 'int'
+    #0 0x564944824d7c in telemetry_byte_counter ../fuzzing_internship/targets/internship_parser.c:170
+    #1 0x56494482588f in process_application_payload ../fuzzing_internship/targets/internship_parser.c:241
+    #2 0x564944825f20 in main ../fuzzing_internship/targets/internship_parser.c:307
+    #3 0x7f1d1982a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7f1d1982a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x564944824404 in _start (/home/claude/w/fuzzing_internship/build/parser_asan+0x3404) (BuildId: 5944f1cce05cdf4314454e51ca1443ca957a2d59)
+

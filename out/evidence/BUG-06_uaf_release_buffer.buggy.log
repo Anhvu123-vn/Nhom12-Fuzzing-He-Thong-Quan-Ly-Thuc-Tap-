@@ -1,0 +1,62 @@
+=================================================================
+==124==ERROR: AddressSanitizer: heap-use-after-free on address 0x503000000070 at pc 0x555fd9776a90 bp 0x7ffcf2efc320 sp 0x7ffcf2efc310
+WRITE of size 1 at 0x503000000070 thread T0
+    #0 0x555fd9776a8f in release_session_buffer ../fuzzing_internship/targets/internship_parser.c:126
+    #1 0x555fd9777ad5 in process_application_payload ../fuzzing_internship/targets/internship_parser.c:263
+    #2 0x555fd9777f20 in main ../fuzzing_internship/targets/internship_parser.c:307
+    #3 0x7f0cb202a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7f0cb202a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x555fd9776404 in _start (/home/claude/w/fuzzing_internship/build/parser_asan+0x3404) (BuildId: 5944f1cce05cdf4314454e51ca1443ca957a2d59)
+
+0x503000000070 is located 0 bytes inside of 32-byte region [0x503000000070,0x503000000090)
+freed by thread T0 here:
+    #0 0x7f0cb2cfc4d8 in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x555fd97769f3 in release_session_buffer ../fuzzing_internship/targets/internship_parser.c:124
+    #2 0x555fd9777ad5 in process_application_payload ../fuzzing_internship/targets/internship_parser.c:263
+    #3 0x555fd9777f20 in main ../fuzzing_internship/targets/internship_parser.c:307
+    #4 0x7f0cb202a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x7f0cb202a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #6 0x555fd9776404 in _start (/home/claude/w/fuzzing_internship/build/parser_asan+0x3404) (BuildId: 5944f1cce05cdf4314454e51ca1443ca957a2d59)
+
+previously allocated by thread T0 here:
+    #0 0x7f0cb2cfd9c7 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x555fd9776deb in allocate_session ../fuzzing_internship/targets/internship_parser.c:185
+    #2 0x555fd9777899 in process_application_payload ../fuzzing_internship/targets/internship_parser.c:244
+    #3 0x555fd9777f20 in main ../fuzzing_internship/targets/internship_parser.c:307
+    #4 0x7f0cb202a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x7f0cb202a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #6 0x555fd9776404 in _start (/home/claude/w/fuzzing_internship/build/parser_asan+0x3404) (BuildId: 5944f1cce05cdf4314454e51ca1443ca957a2d59)
+
+SUMMARY: AddressSanitizer: heap-use-after-free ../fuzzing_internship/targets/internship_parser.c:126 in release_session_buffer
+Shadow bytes around the buggy address:
+  0x502ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x503000000000: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa[fd]fd
+  0x503000000080: fd fd fa fa 00 00 00 fa fa fa 00 00 00 04 fa fa
+  0x503000000100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==124==ABORTING
